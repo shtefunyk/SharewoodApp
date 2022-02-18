@@ -7,11 +7,11 @@ task sourceJar(type: Jar) {
 
 project.afterEvaluate {
     publishToMavenLocal {
-        def groupId = "com.robinhood"
-        def artifactId = "wsc"
+        def groupId = "com.github.shtefunyk"
+        def artifactId = "SharewoodApp"
         def versionName = "1.0.0"
-        def debugSuffix = "-debug"
-        def releaseSuffix = "-release"
+        def debugSuffix = ""
+        def releaseSuffix = ""
         publishing {
             publications {
                 LibraryRelease(MavenPublication) {
