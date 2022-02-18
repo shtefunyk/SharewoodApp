@@ -7,9 +7,9 @@ task sourceJar(type: Jar) {
 
 project.afterEvaluate {
     publishToMavenLocal {
-        def groupId = "com.github.shtefunyk"
-        def artifactId = "SharewoodApp"
-        def versionName = "1.0.2"
+        def groupId = "com.sharewood"
+        def artifactId = "libx"
+        def versionName = "1.0.5"
         def debugSuffix = ""
         def releaseSuffix = ""
         publishing {
