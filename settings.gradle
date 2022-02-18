@@ -1,0 +1,3 @@
+rootProject.name = "TrafficAppsCoreLib"
+include ':app'
+include ':lib'
