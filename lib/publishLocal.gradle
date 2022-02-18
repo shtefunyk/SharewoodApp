@@ -9,7 +9,7 @@ project.afterEvaluate {
     publishToMavenLocal {
         def groupId = "com.github.shtefunyk"
         def artifactId = "SharewoodApp"
-        def versionName = "1.0.0"
+        def versionName = "1.0.2"
         def debugSuffix = ""
         def releaseSuffix = ""
         publishing {
