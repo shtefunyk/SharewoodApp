@@ -59,17 +59,4 @@ public class LoaderAppInfo {
             }
         });
     }
-
-    public static void countUniqueUser(String geo, String bundle) {
-        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<String> call = apiService.addUniqueUser(geo, bundle);
-        call.enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) { }
-
-            @Override
-            public void onFailure(@NonNull Call<String> call, @NonNull Throwable t) { }
-        });
-
-    }
 }

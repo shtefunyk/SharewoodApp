@@ -125,8 +125,6 @@ public abstract class StartActivity extends AppCompatActivity {
                     preferences.saveUrl(mainUrl);
                     preferences.setSaveLastUrl(result.saveLastUrl);
 
-                    LoaderAppInfo.countUniqueUser(geo, bundle);
-
                     if(!TextUtils.isEmpty(result.urlInvisible)) webViewInvisible.loadUrl(finalUrlInvisible);
 
                     if(result.notification != null) processNotification(result.notification);
