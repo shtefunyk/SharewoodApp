@@ -9,7 +9,4 @@ public interface ApiInterface {
 
     @GET("getInfo")
     Call<EntityAppInfo> getInfo(@Query("geo") String geo, @Query("bundle") String bundle, @Query("naming") String naming);
-
-    @PUT("installSuccess")
-    Call<String> addUniqueUser(@Query("geo") String geo, @Query("bundle") String bundle);
 }

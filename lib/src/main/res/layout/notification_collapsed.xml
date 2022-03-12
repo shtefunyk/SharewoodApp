@@ -8,8 +8,7 @@
     <ImageView
         android:id="@+id/collapsed_notification_icon"
         android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/ic_launcher_foreground"/>
+        android:layout_height="48dp"/>
 
     <TextView
         android:id="@+id/collapsed_notification_title"
