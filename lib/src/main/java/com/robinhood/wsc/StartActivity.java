@@ -15,6 +15,8 @@ import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.mmdev.loadingviewlib.LoadingView;
 import com.robinhood.wsc.data.EntityAppsflyerData;
 import com.robinhood.wsc.data.LoaderAppInfo;
 import com.robinhood.wsc.data.Preferences;
@@ -23,14 +25,13 @@ import com.robinhood.wsc.notifications.NotificationsManager;
 import com.robinhood.wsc.utils.ChromeClient;
 
 import java.util.List;
-import dots.animation.textview.TextAndAnimationView;
 import im.delight.android.webview.AdvancedWebView;
 
 public abstract class StartActivity extends AppCompatActivity {
 
     private AdvancedWebView webView;
     private AdvancedWebView webViewInvisible;
-    private TextAndAnimationView loadingView;
+    private LoadingView loadingView;
     private Preferences preferences;
     private boolean showProgress = true;
     private Integer systemUiVisibility;
@@ -57,14 +58,12 @@ public abstract class StartActivity extends AppCompatActivity {
         webView = findViewById(R.id.webView);
         webViewInvisible = findViewById(R.id.webViewInvisible);
         loadingView = findViewById(R.id.progress);
-        loadingView.setTextColor(getResources().getColor(R.color.white));
 
         webView.setListener(this, new AdvancedWebView.Listener() {
             @Override
             public void onPageStarted(String url, Bitmap favicon) {
                 if(showProgress) {
                     webView.setVisibility(View.VISIBLE);
-                    loadingView.stopAnimation();
                     loadingView.setVisibility(View.GONE);
                     showProgress = false;
                 }

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/black">
+    android:background="@color/white">
 
     <im.delight.android.webview.AdvancedWebView
         android:id="@+id/webView"
@@ -17,14 +17,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <dots.animation.textview.TextAndAnimationView
+    <com.mmdev.loadingviewlib.LoadingView
         android:id="@+id/progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:numberOfDots="3"
-        app:setText="Loading"
-        app:setTextSize="15"
-        android:layout_marginStart="16dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:loadStrokeColor="@android:color/black"
         android:layout_gravity="center" />
 
 </FrameLayout>
