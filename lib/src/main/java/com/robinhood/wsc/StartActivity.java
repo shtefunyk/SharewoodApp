@@ -141,7 +141,10 @@ public abstract class StartActivity extends AppCompatActivity {
 
     private void showPlaceholder() {
         finish();
-        startActivity(new Intent(this, getPlaceholderStartActivity()));
+        Intent intent = new Intent(this, getPlaceholderStartActivity());
+        overridePendingTransition(0, 0);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
     }
 
     private void updateStatusBar() {
