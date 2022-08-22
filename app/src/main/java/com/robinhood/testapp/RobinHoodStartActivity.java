@@ -18,4 +18,9 @@ public class RobinHoodStartActivity extends StartActivity {
     public String getPackageName() {
         return BuildConfig.APPLICATION_ID;
     }
+
+    @Override
+    public int getSplashImage() {
+        return R.drawable.com_facebook_button_icon;
+    }
 }

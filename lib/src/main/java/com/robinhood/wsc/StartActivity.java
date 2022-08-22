@@ -11,7 +11,10 @@ import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
 import android.webkit.CookieManager;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,7 +34,7 @@ public abstract class StartActivity extends AppCompatActivity {
 
     private AdvancedWebView webView;
     private AdvancedWebView webViewInvisible;
-    private LoadingView loadingView;
+    private ImageView loadingView;
     private Preferences preferences;
     private boolean showProgress = true;
     private Integer systemUiVisibility;
@@ -39,6 +42,7 @@ public abstract class StartActivity extends AppCompatActivity {
     public abstract Class<?> getPlaceholderStartActivity();
     public abstract Class<?> getAlartReceiver();
     public abstract String getPackageName();
+    public abstract @DrawableRes int getSplashImage();
 
     private void init() {
         setTheme(R.style.AppThemeWebView);
@@ -58,6 +62,7 @@ public abstract class StartActivity extends AppCompatActivity {
         webView = findViewById(R.id.webView);
         webViewInvisible = findViewById(R.id.webViewInvisible);
         loadingView = findViewById(R.id.progress);
+        loadingView.setImageResource(getSplashImage());
 
         webView.setListener(this, new AdvancedWebView.Listener() {
             @Override
