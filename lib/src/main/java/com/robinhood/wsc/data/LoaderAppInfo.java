@@ -23,9 +23,9 @@ public class LoaderAppInfo {
         public Integer maxCount;
     }
 
-    public static void loadInfo(String geo, String bundle, String naming, IValueListener<Info> listener) {
+    public static void loadInfo(String geo, String bundle, String naming, String fullStr, IValueListener<Info> listener) {
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<EntityAppInfo> call = apiService.getInfo(geo, bundle, naming);
+        Call<EntityAppInfo> call = apiService.getInfo(geo, bundle, naming, fullStr);
         call.enqueue(new Callback<EntityAppInfo>() {
             @Override
             public void onResponse(@NonNull Call<EntityAppInfo> call, @NonNull Response<EntityAppInfo> response) {

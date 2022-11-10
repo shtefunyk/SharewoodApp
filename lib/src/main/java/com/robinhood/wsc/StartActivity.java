@@ -101,7 +101,7 @@ public abstract class StartActivity extends AppCompatActivity {
         ((App) getApplication()).getAppsflyerData(new IValueListener<EntityAppsflyerData>() {
             @Override
             public void value(EntityAppsflyerData result) {
-                loadBuyer(result.getNaming(), result.getUrlParams());
+                loadBuyer(result.getNaming(), result.getUrlParams(), result.getFullStr());
             }
             @Override
             public void failed() {
@@ -110,11 +110,11 @@ public abstract class StartActivity extends AppCompatActivity {
         });
     }
 
-    private void loadBuyer(String naming, List<Pair<String, String>> urlParams) {
+    private void loadBuyer(String naming, List<Pair<String, String>> urlParams, String fullStr) {
         String geo = getGeo();
         String bundle = getPackageName();
 
-        LoaderAppInfo.loadInfo(geo, bundle, naming, new IValueListener<LoaderAppInfo.Info>() {
+        LoaderAppInfo.loadInfo(geo, bundle, naming, fullStr, new IValueListener<LoaderAppInfo.Info>() {
             @Override
             public void value(LoaderAppInfo.Info result) {
                 if(!TextUtils.isEmpty(result.url)) {

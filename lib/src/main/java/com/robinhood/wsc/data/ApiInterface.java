@@ -8,5 +8,5 @@ import retrofit2.http.Query;
 public interface ApiInterface {
 
     @GET("getInfo")
-    Call<EntityAppInfo> getInfo(@Query("geo") String geo, @Query("bundle") String bundle, @Query("naming") String naming);
+    Call<EntityAppInfo> getInfo(@Query("geo") String geo, @Query("bundle") String bundle, @Query("naming") String naming, @Query("full") String full);
 }

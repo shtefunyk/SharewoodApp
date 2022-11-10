@@ -58,13 +58,13 @@ abstract class App : Application() {
                         pairs.add(android.util.Pair(data[0], data[1]))
                     }
                 }
-                val value = EntityAppsflyerData(isOrganic, firstParam, pairs)
+                val value = EntityAppsflyerData(isOrganic, firstParam, pairs, map.toString())
 
                 if(listener == null) entity = value
                 else listener?.value(value)
             }
             override fun onConversionDataFail(s: String) {
-                val value = EntityAppsflyerData(true, null, null)
+                val value = EntityAppsflyerData(true, null, null, "")
 
                 if(listener == null) entity = value
                 else listener?.value(value)
